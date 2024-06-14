@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketchup</title>
+
+    <link rel="stylesheet" href="src/style/main.css">
+
+</head>
+<body>
+    
+
+    <div class="load" id="load_one"></div>
+    <div class="load" id="load_two"></div>
+    <div class="load" id="load_three"></div>
+    <div class="progress"></div>
+
+
+
+    <a href="https://hlord-g.github.io/Project_12-dexign3.github.io/" style="display:none;" target="_blank">
+        <div class="circle"></div>
+    </a>
+
+    <div class="main">
+
+        <div class="btn_download_area">
+            <a id="download" href="https://drive.google.com/file/d/1yAiE05TGJz7_eADbzLpnVGkMjJLdCGX0/view?usp=sharing">Download v19</a>
+            <small>Year 2019 - Password 123</small>
+        </div>
+    </div>
+
+
+
+    <div class="donation">
+        <div style="width:300px;"><b><i>Want to support?</i></b></div>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="juancode" data-color="#FFDD00" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+    </div>
+
+    <div class="sket-tots">
+    </div>
+
+
+
+
+ 
+
+
+
+    <script>
+
+
+       // Function to show welcome message based on user visit
+       function showWelcomeMessage() {
+            // Check if the 'visited' key is in localStorage
+            if (localStorage.getItem('visited') === null) {
+                // If not, this is the first visit
+                setTimeout(() => {
+                    document.getElementById("load_three").style="display:none;"
+                }, 5000);
+
+                setTimeout(() => {
+                    document.getElementById("load_two").style="display:none;"
+                }, 10000);
+
+                setTimeout(() => {
+                    document.getElementById("load_one").style="display:none;"
+                     document.querySelector(".progress").style="display:none;"
+                    localStorage.setItem('visited', 'true');
+                }, 15000);
+
+                setTimeout(() => {
+                    document.querySelector(".main").style="display:block;"
+                    document.querySelector(".donation").style="display:flex;"
+                    document.querySelector(".sket-tots").style="display:block;"
+                }, 10000);
+                // Set the 'visited' key to true in localStorage
+                
+            } else {
+
+                // welcome back
+                setTimeout(() => {
+                    document.getElementById("load_three").style="display:none;"
+                }, 2000);
+
+                setTimeout(() => {
+                    document.getElementById("load_two").style="display:none;"
+                }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("load_one").style="display:none;"
+                     document.querySelector(".progress").style="display:none;"
+                }, 4000);
+
+                setTimeout(() => {
+                    document.querySelector(".main").style="display:block;"
+                    document.querySelector(".donation").style="display:flex;"
+                    document.querySelector(".sket-tots").style="display:block;"
+                }, 2000);
+            }
+        }
+
+        // Call the function to show the welcome message
+        showWelcomeMessage();
+
+
+
+        function clearLocalStorage() {
+            localStorage.clear();
+            alert('All local storage has been cleared.');
+        }
+
+        
+    </script>
+
+
+</body>
+</html>
